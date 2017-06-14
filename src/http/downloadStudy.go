@@ -23,8 +23,11 @@ func DownloadFile(url string) {
 	if err != nil {
 		panic(err)
 	}
-	fmt.Println("body===>", resp.Body)
-	io.Copy(f, resp.Body)
+	//fmt.Println("body===>", resp.Body)
+	_, wErr := io.Copy(f, resp.Body)
+	if wErr != nil {
+		fmt.Println("保存失败", wErr)
+	}
 	defer resp.Body.Close()
 }
 

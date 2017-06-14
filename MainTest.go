@@ -7,9 +7,11 @@ import (
 	myHttp "ImgSpider/src/http"
 	"github.com/PuerkitoBio/goquery"
 	"strings"
-	_"ImgSpider/src/goqueryStudy"
+	//"ImgSpider/src/goqueryStudy"
 	_"ImgSpider/src/goroutineTest"
 	"runtime"
+	_"ImgSpider/src/goqueryStudy"
+	"ImgSpider/src/goqueryStudy"
 )
 
 type Abc struct {
@@ -40,7 +42,17 @@ func main() {
 	//goroutineTest.RunTest()
 	//goroutineTest.RunTest_1()
 	//goroutineTest.Test()
-	testQueen()
+	//testQueen()
+	//goqueryStudy.ImgSp("https://www.4493.com/")
+	//goqueryStudy.ImgSp("http://slide.games.sina.com.cn/t/slide_21_2248_426871.html")
+	goqueryStudy.OtherImgSp("http://slide.games.sina.com.cn/t/slide_21_2248_426871.html")
+	/*var h queen.Handler  = queen.Handler(func(data interface{}){
+		fmt.Println("===", data)
+	})
+	queen.CreateDataQueen(h)
+	queen.Push("啊啊啊")
+	queen.Push(1)
+	queen.Push(1)*/
 	var ch chan int
 	ch <- 1
 
@@ -99,7 +111,7 @@ func testQueen() {
 			fmt.Println(data.(int) + i)
 		}
 	})
-	queen.CreateQueen(handler, 10)
+	queen.CreateQueen(handler)
 	for i := 0; i < 10; i++ {
 		queen.PushData(1)
 	}

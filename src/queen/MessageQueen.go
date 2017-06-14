@@ -24,15 +24,14 @@ type MsgQueenManager struct {
 
 var q *queen
 
-func CreateQueen(handler MsgQueenHandler, size int) {
+func CreateQueen(handler MsgQueenHandler) {
 	q = new(queen)
 	q.list = list.New()
 	q.lock = &sync.Mutex{}
 	q.size = 0
 	q.manager = MsgQueenManager{handler}
-	for i := 0; i < size; i++ {
-		go readData()
-	}
+	go readData()
+
 }
 
 //入队
@@ -48,13 +47,15 @@ func PushData(data interface{}) {
 func readData() {
 	for {
 		q.lock.Lock()
+		defer q.lock.Unlock()
 		var element *list.Element
+		fmt.Println("队列长度", q.size)
 		if q.size > 0 {
 			element = q.list.Front()
 			q.list.Remove(element)
 			q.size = q.list.Len()
 			q.lock.Unlock()
-			fmt.Println(element)
+			fmt.Println("队列read函数", element)
 			q.manager.Callback(element.Value)
 		}
 
