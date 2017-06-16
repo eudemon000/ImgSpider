@@ -44,7 +44,7 @@ func main() {
 	//testQueen()
 	//goqueryStudy.ImgSp("https://www.4493.com/")
 	//goqueryStudy.ImgSp("http://slide.games.sina.com.cn/t/slide_21_2248_426871.html")
-	goqueryStudy.OtherImgSp("http://www.mmjpg.com/")
+	goqueryStudy.OtherImgSp("http://www.txxx.com/categories/asian/")
 	/*var h queen.Handler  = queen.Handler(func(data interface{}){
 		fmt.Println("===", data)
 	})
