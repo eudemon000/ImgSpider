@@ -7,14 +7,22 @@ import (
 	"io"
 	"fmt"
 	"strings"
+	"ImgSpider/src/utils"
 )
 
 func DownloadFile(url string) {
+	defer func() {
+		if err := recover(); err != nil {
+			fmt.Println(err)
+		}
+	}()
 	resp, err := http.Get(url)
+
 	if err != nil {
 		panic(err)
 	}
-	fileName := formatUrl(url)
+	//fileName := formatUrl(url)
+	fileName := formatFileName(url)
 	osErr := os.MkdirAll("img", os.ModePerm)
 	if osErr != nil {
 		fmt.Println(osErr)
@@ -39,3 +47,12 @@ func formatUrl(url string) string {
 	result := strs[len(strs) - 1]
 	return result
 }
+
+func formatFileName(url string) string {
+	index := strings.LastIndex(url, ".")
+	temp := url[index:]
+	m, _ := utils.Md5(url)
+
+	return m + temp
+}
+

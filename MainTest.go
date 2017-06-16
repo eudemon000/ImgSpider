@@ -10,7 +10,6 @@ import (
 	//"ImgSpider/src/goqueryStudy"
 	_"ImgSpider/src/goroutineTest"
 	"runtime"
-	_"ImgSpider/src/goqueryStudy"
 	"ImgSpider/src/goqueryStudy"
 )
 
@@ -45,7 +44,7 @@ func main() {
 	//testQueen()
 	//goqueryStudy.ImgSp("https://www.4493.com/")
 	//goqueryStudy.ImgSp("http://slide.games.sina.com.cn/t/slide_21_2248_426871.html")
-	goqueryStudy.OtherImgSp("http://slide.games.sina.com.cn/t/slide_21_2248_426871.html")
+	goqueryStudy.OtherImgSp("http://www.mmjpg.com/")
 	/*var h queen.Handler  = queen.Handler(func(data interface{}){
 		fmt.Println("===", data)
 	})
@@ -53,6 +52,8 @@ func main() {
 	queen.Push("啊啊啊")
 	queen.Push(1)
 	queen.Push(1)*/
+
+	//flagStudy.TestFlag()
 	var ch chan int
 	ch <- 1
 
