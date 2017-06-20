@@ -12,6 +12,7 @@ import (
 	"runtime"
 	_"ImgSpider/src/goqueryStudy"
 	"ImgSpider/src/channelStudy"
+	_"ImgSpider/src/listStudy"
 )
 
 type Abc struct {
@@ -47,7 +48,10 @@ func main() {
 	//goqueryStudy.ImgSp("http://slide.games.sina.com.cn/t/slide_21_2248_426871.html")
 
 	//goqueryStudy.OtherImgSp("http://www.txxx.com/categories/asian/")
-	channelStudy.Test16()
+	//channelStudy.Test16()
+	//listStudy.Demo1()
+	//channelStudy.Demo1()
+	channelStudy.Demo2()
 
 	/*var h queen.Handler  = queen.Handler(func(data interface{}){
 		fmt.Println("===", data)
@@ -58,6 +62,7 @@ func main() {
 	queen.Push(1)*/
 
 	//flagStudy.TestFlag()
+
 	var ch chan int
 	ch <- 1
 
